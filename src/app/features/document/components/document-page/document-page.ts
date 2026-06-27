@@ -15,7 +15,7 @@ export class DocumentPage {
   readonly page = input.required<IDocumentPage>();
   readonly zoom = input.required<number>();
   readonly annotations = input.required<TDocumentAnnotation[]>();
-  readonly isAddingText = input<boolean>();
+  readonly isAddingText = input<boolean>(false);
 
   readonly pageClicked = output<{
     pageNumber: number;

@@ -11,11 +11,11 @@ export function getPercentPosition(
   const rect = element.getBoundingClientRect();
 
   return {
-    x: clampPercent(((event.clientX - rect.left - offset.x) / rect.width) * 100),
-    y: clampPercent(((event.clientY - rect.top - offset.y) / rect.height) * 100),
+    x: normalizePercent(((event.clientX - rect.left - offset.x) / rect.width) * 100),
+    y: normalizePercent(((event.clientY - rect.top - offset.y) / rect.height) * 100),
   };
 }
 
-export function clampPercent(value: number): number {
+export function normalizePercent(value: number): number {
   return Math.min(100, Math.max(0, value));
 }

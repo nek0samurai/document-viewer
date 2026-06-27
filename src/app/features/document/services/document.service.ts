@@ -15,7 +15,6 @@ export class DocumentService {
   }
 
   saveDocument(document: IDocumentView | null, annotations: ITextAnnotation[]) {
-
     if (!document) {
       return;
     }

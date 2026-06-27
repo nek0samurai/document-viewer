@@ -71,7 +71,6 @@ export class Drag<T> implements OnDestroy {
 
     if (this.pointerId !== null) {
       this.elementRef.nativeElement.releasePointerCapture?.(this.pointerId);
-
       this.pointerId = null;
     }
 
