@@ -1,0 +1,21 @@
+<div
+  class="annotation"
+  appDrag
+  [dragBoundary]="dragItem()"
+  [dragPosition]="{x: annotation().x, y: annotation().y}"
+  [dragData]="annotation()"
+  [style.left.%]="annotation().x"
+  [style.top.%]="annotation().y"
+  (dragMoved)="onMoved($event)"
+>
+  <span>{{ annotation().text }}</span>
+
+  <button
+    type="button"
+    class="delete"
+    (pointerdown)="$event.stopPropagation()"
+    (click)="onDelete($event)"
+  >
+    ×
+  </button>
+</div>

@@ -1,0 +1,12 @@
+.viewer {
+  min-height: 100vh;
+  background: #f3f4f6;
+}
+
+.document {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+}

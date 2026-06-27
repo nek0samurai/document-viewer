@@ -1,0 +1,19 @@
+<div
+  #pageElement
+  class="document-page"
+  [style.cursor]="isAddingText() ? 'crosshair' : 'default'"
+  [attr.data-page-number]="page().number"
+  [style.width.px]="800 * zoom()"
+  (click)="onPageClick($event)"
+>
+  <img [src]="page().imageUrl" [alt]="'Page ' + page().number" />
+
+  @for (annotation of annotations(); track annotation.id) {
+    <app-annotation-item
+      [annotation]="annotation"
+      [dragItem]="pageElement"
+      (moved)="annotationMoved.emit($event)"
+      (deleted)="annotationDeleted.emit($event)"
+    />
+  }
+</div>

@@ -1,0 +1,28 @@
+.annotation {
+  position: absolute;
+  transform: translate(-4px, -4px);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 220px;
+  padding: 6px 8px;
+  border: 1px solid #d6a100;
+  border-radius: 4px;
+  background: #fff3b0;
+  color: #1f2937;
+  font-size: 14px;
+  cursor: grab;
+  user-select: none;
+}
+
+.annotation:active {
+  cursor: grabbing;
+}
+
+.delete {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}

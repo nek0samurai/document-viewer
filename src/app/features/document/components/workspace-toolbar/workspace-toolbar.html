@@ -1,0 +1,20 @@
+<header class="toolbar">
+  <div class="title">{{ documentName() }}</div>
+
+  <button type="button" (click)="zoomOutClicked.emit()">-</button>
+  <span>{{ zoomLabel() }}</span>
+  <button type="button" (click)="zoomInClicked.emit()">+</button>
+
+  <input
+    type="text"
+    [value]="annotationText()"
+    placeholder="Annotation text"
+    (input)="onTextInput($event)"
+  />
+
+  <button type="button" [class.active]="isAddingText()" (click)="addTextClicked.emit()">
+    Add text
+  </button>
+
+  <button type="button" (click)="saveClicked.emit()">Save</button>
+</header>

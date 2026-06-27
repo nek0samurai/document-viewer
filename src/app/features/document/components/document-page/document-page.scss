@@ -1,0 +1,14 @@
+.document-page {
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0 6px 24px rgb(15 23 42 / 12%);
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    user-select: none;
+    pointer-events: none;
+  }
+}
+

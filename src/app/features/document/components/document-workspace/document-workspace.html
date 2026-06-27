@@ -1,0 +1,33 @@
+@if (documentResource.isLoading()) {
+  <span>Loading</span>
+} @else if (documentResource.error()) {
+  <span>some error</span>
+} @else if (document(); as document) {
+  <main class="viewer">
+    <app-workspace-toolbar
+      [documentName]="document.name"
+      [zoomLabel]="zoomLabel()"
+      [isAddingText]="isAddingText()"
+      [annotationText]="annotationText()"
+      (zoomOutClicked)="zoomOut()"
+      (zoomInClicked)="zoomIn()"
+      (addTextClicked)="startTextAnnotation()"
+      (saveClicked)="save()"
+      (annotationTextChanged)="setAnnotationText($event)"
+    />
+
+    <section class="document">
+      @for (page of document.pages; track page.number) {
+        <app-document-page
+          [page]="page"
+          [zoom]="zoom()"
+          [annotations]="getAnnotationsForPage(page.number)"
+          [isAddingText]="isAddingText()"
+          (pageClicked)="addAnnotation($event)"
+          (annotationMoved)="moveAnnotation($event)"
+          (annotationDeleted)="deleteAnnotation($event)"
+        />
+      }
+    </section>
+  </main>
+}
